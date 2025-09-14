@@ -1,3 +1,6 @@
+### `index.html`
+```html
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -10,93 +13,80 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 
-<!-- Minimal CSS reset + styles -->
-<style>
-:root{
---bg-1: #ffdcb3; /* peach */
---bg-2: #cfe8ff; /* light blue */
---accent: #6b4eff; /* soft purple-blue */
---muted: #6b6b78;
---glass: rgba(255,255,255,0.6);
---radius: 20px;
---max-width: 1100px;
-color-scheme: light;
-}
+<!-- External CSS -->
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="site" role="document">
 
 
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-margin:0;
-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
--webkit-font-smoothing:antialiased;
-background: linear-gradient(135deg,var(--bg-1) 0%, var(--bg-2) 100%);
-color:#111;
-line-height:1.45;
-display:flex;
-justify-content:center;
-padding:48px 24px;
-}
+<header>
+<div class="brand">
+<div class="logo">KA</div>
+<div>
+<h1>Portfolio</h1>
+<p>artworks • films • design • code</p>
+</div>
+</div>
 
 
-.site{
-width:100%;
-max-width:var(--max-width);
-background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.55));
-border-radius:28px;
-box-shadow: 0 10px 30px rgba(16,24,40,0.12);
-overflow:hidden;
-backdrop-filter: blur(6px) saturate(120%);
-}
+<nav aria-label="Primary">
+<a href="#works">Works</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
 
-header{
-padding:48px 56px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:24px;
-}
+<main>
+<section class="hero">
+<div class="intro card fade-in">
+<h2>Quiet experiments in color, sound, and small rebellions.</h2>
+<p>I'm an artist who mixes moving-image, painting, and interactive work. This portfolio collects recent projects, process notes, and small playable pieces.</p>
+<a class="cta" href="#works">See recent work</a>
+</div>
 
 
-.brand{
-display:flex;align-items:center;gap:16px;
-}
-.logo{
-width:64px;height:64px;border-radius:14px;
-display:inline-grid;place-items:center;
-background:linear-gradient(135deg,var(--accent), #ff7aa2);
-color:white;font-weight:700;font-family:'Playfair Display',serif;
-box-shadow:0 6px 18px rgba(107,78,255,0.18);
-}
-.brand h1{margin:0;font-family:'Playfair Display',serif;font-size:20px;letter-spacing:0.6px}
-.brand p{margin:0;font-size:12px;color:var(--muted)}
+<aside class="card fade-in stagger-2">
+<strong style="display:block">Featured — "Tidal Room"</strong>
+<p style="margin:10px 0;color:var(--muted)">A short experimental film about shorelines, memory, and the unsteady grammar of home.</p>
+<div style="display:flex;gap:8px;margin-top:8px">
+<a href="#" style="font-size:13px;text-decoration:none;color:var(--accent)">Watch</a>
+<a href="#" style="font-size:13px;text-decoration:none;color:var(--muted)">Process notes</a>
+</div>
+</aside>
+</section>
 
 
-nav{display:flex;gap:18px;align-items:center}
-nav a{font-weight:600;text-decoration:none;color:var(--muted);padding:8px 12px;border-radius:12px}
-nav a:hover{color:var(--accent);background:rgba(107,78,255,0.06)}
+<section id="works" aria-labelledby="works-heading">
+<h3 id="works-heading" style="font-family:'Playfair Display',serif;margin-top:28px">Selected works</h3>
 
 
-main{padding:0 56px 56px}
+<div class="gallery">
+<div class="tile" tabindex="0" data-title="Painting — Salt Lantern">
+<img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Abstract painting with warm tones">
+<div class="meta">Salt Lantern</div>
+</div>
 
 
-.hero{
-display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding-bottom:36px;border-bottom:1px solid rgba(16,24,40,0.04)
-}
+<div class="tile" tabindex="0" data-title="Short film — Tidal Room">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Still from experimental short film">
+<div class="meta">Tidal Room (film)</div>
+</div>
 
 
-.intro h2{
-font-family:'Playfair Display',serif;font-size:42px;margin:0 0 12px;line-height:1.05;color:#111
-}
-.intro p{color:var(--muted);margin:0 0 18px}
-.cta{display:inline-block;padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#ff7aa2);color:white;text-decoration:none;font-weight:600}
+<div class="tile" tabindex="0" data-title="Interactive — Bees & Haikus">
+<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Interactive generative piece">
+<div class="meta">Bees & Haikus</div>
+</div>
 
 
-.card{
-background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.7));
-border-radius:18px;padding:18px;box-shadow:0 8px 20px rgba(16,24,40,0.06);
-}
+<div class="tile" tabindex="0" data-title="Design — Typeface Study">
+<img src="https://images.unsplash.com/photo-1473186578172-c141e6798cf4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Typography layout image">
+<div class="meta">Typeface Study</div>
+</div>
 
 
-@keyframes fadeIn{to{opacity:1;transform:none}}
+<div class="tile" tabindex="0" data-title="Installation — Drift">
+<img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Installation still">
+<div class="meta">Drift (installation)</div>
