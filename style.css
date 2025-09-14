@@ -1,10 +1,84 @@
-body {
-  background-color: #f4f4f4;
-  font-family: Arial, sans-serif;
-  color: #333;
-  padding: 20px;
-}
+</style>
+</div>
 
-h1 {
-  color: #0066cc;
+
+<!-- lightweight modal for viewing titles -->
+<div id="lightbox" aria-hidden="true" style="position:fixed;inset:0;display:none;place-items:center;background:rgba(0,0,0,0.6);z-index:40">
+<div role="dialog" aria-modal="true" style="background:white;padding:28px;border-radius:16px;max-width:720px;width:92%;box-shadow:0 20px 60px rgba(0,0,0,0.35)">
+<button id="close-ly" aria-label="Close" style="float:right;background:transparent;border:0;font-size:18px;">✕</button>
+<div id="ly-title" style="font-family:'Playfair Display',serif;font-size:20px;margin-top:6px"></div>
+<p id="ly-desc" style="color:var(--muted);margin-top:8px">This is a placeholder for project details, process notes, and quick credits.</p>
+</div>
+</div>
+
+
+</section>
+
+
+<section class="panels" id="about">
+<div class="about card fade-in">
+<h3>About</h3>
+<p>I make interdisciplinary work that moves between film, painting, and interactive projects. My practice is interested in edges — coastal memory, language that slips, forms that hold and then vanish. I make quiet, small-scale interventions and sometimes larger installations that ask the viewer to slow down.</p>
+<p style="margin-top:12px;color:var(--muted)">Process: sketching with charcoal, filming with 16mm and phone, building small interactive pieces with p5.js and vanilla JS.</p>
+</div>
+
+
+<aside class="contact card fade-in stagger-3" id="contact">
+<h4 style="margin:0 0 8px;font-family:'Playfair Display',serif">Contact</h4>
+<form onsubmit="event.preventDefault();alert('Thanks — this is a demo form. Replace with your backend or an email link.');">
+<input type="text" placeholder="Your name" required />
+<input type="email" placeholder="Your email" required />
+<textarea rows="4" placeholder="A short message"></textarea>
+<button type="submit">Send message</button>
+</form>
+<p style="font-size:13px;color:var(--muted);margin-top:10px">Or email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+</aside>
+</section>
+
+
+</main>
+
+
+<footer>
+<div>&copy; <span id="year"></span> Portfolio</div>
+<div style="display:flex;gap:12px"><a href="#" style="text-decoration:none;color:var(--muted)">Instagram</a><a href="#" style="text-decoration:none;color:var(--muted)">Vimeo</a></div>
+</footer>
+</div>
+
+
+<script>
+// set year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+
+// tiles -> lightbox
+const tiles = document.querySelectorAll('.tile');
+const lightbox = document.getElementById('lightbox');
+const lyTitle = document.getElementById('ly-title');
+const lyDesc = document.getElementById('ly-desc');
+const closeLy = document.getElementById('close-ly');
+
+
+tiles.forEach(tile => {
+tile.addEventListener('click', () => openTile(tile));
+tile.addEventListener('keypress', (e) => { if(e.key === 'Enter') openTile(tile)});
+});
+
+
+function openTile(tile){
+const title = tile.dataset.title || 'Untitled';
+lyTitle.textContent = title;
+lyDesc.textContent = 'Short description and credits go here. Add links, making-of notes, or embedded video in place of this text.';
+lightbox.style.display = 'grid';
+lightbox.setAttribute('aria-hidden', 'false');
 }
+closeLy.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) closeLightbox(); });
+function closeLightbox(){ lightbox.style.display='none'; lightbox.setAttribute('aria-hidden','true'); }
+
+
+// small entrance animation trigger
+document.querySelectorAll('.fade-in').forEach((el, i) => { el.style.animationDelay = (0.08 * i) + 's'; });
+</script>
+</body>
+</html>
