@@ -1,26 +1,102 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>My First Web Page</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #fefefe;
-      color: #333;
-      padding: 20px;
-    }
-    h1 {
-      color: #0066cc;
-    }
-  </style>
-</head>
-<body>
-testing testing testing
-  <h1>Hello, World!</h1>
-  <p>This is a basic HTML page. You can add text, images, links, and more!</p>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio — Artistic & Elegant</title>
+<meta name="description" content="An artistic, elegant portfolio template with soft peach-to-blue gradient, subtle motion, and a gallery." />
 
-  <a href="https://www.example.com" target="_blank">Visit Example</a>
 
-</body>
-</html>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+
+<!-- Minimal CSS reset + styles -->
+<style>
+:root{
+--bg-1: #ffdcb3; /* peach */
+--bg-2: #cfe8ff; /* light blue */
+--accent: #6b4eff; /* soft purple-blue */
+--muted: #6b6b78;
+--glass: rgba(255,255,255,0.6);
+--radius: 20px;
+--max-width: 1100px;
+color-scheme: light;
+}
+
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+margin:0;
+font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+-webkit-font-smoothing:antialiased;
+background: linear-gradient(135deg,var(--bg-1) 0%, var(--bg-2) 100%);
+color:#111;
+line-height:1.45;
+display:flex;
+justify-content:center;
+padding:48px 24px;
+}
+
+
+.site{
+width:100%;
+max-width:var(--max-width);
+background: linear-gradient(180deg, rgba(255,255,255,0.75), rgba(255,255,255,0.55));
+border-radius:28px;
+box-shadow: 0 10px 30px rgba(16,24,40,0.12);
+overflow:hidden;
+backdrop-filter: blur(6px) saturate(120%);
+}
+
+
+header{
+padding:48px 56px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:24px;
+}
+
+
+.brand{
+display:flex;align-items:center;gap:16px;
+}
+.logo{
+width:64px;height:64px;border-radius:14px;
+display:inline-grid;place-items:center;
+background:linear-gradient(135deg,var(--accent), #ff7aa2);
+color:white;font-weight:700;font-family:'Playfair Display',serif;
+box-shadow:0 6px 18px rgba(107,78,255,0.18);
+}
+.brand h1{margin:0;font-family:'Playfair Display',serif;font-size:20px;letter-spacing:0.6px}
+.brand p{margin:0;font-size:12px;color:var(--muted)}
+
+
+nav{display:flex;gap:18px;align-items:center}
+nav a{font-weight:600;text-decoration:none;color:var(--muted);padding:8px 12px;border-radius:12px}
+nav a:hover{color:var(--accent);background:rgba(107,78,255,0.06)}
+
+
+main{padding:0 56px 56px}
+
+
+.hero{
+display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding-bottom:36px;border-bottom:1px solid rgba(16,24,40,0.04)
+}
+
+
+.intro h2{
+font-family:'Playfair Display',serif;font-size:42px;margin:0 0 12px;line-height:1.05;color:#111
+}
+.intro p{color:var(--muted);margin:0 0 18px}
+.cta{display:inline-block;padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#ff7aa2);color:white;text-decoration:none;font-weight:600}
+
+
+.card{
+background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.7));
+border-radius:18px;padding:18px;box-shadow:0 8px 20px rgba(16,24,40,0.06);
+}
+
+
+@keyframes fadeIn{to{opacity:1;transform:none}}
