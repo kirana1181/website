@@ -1,13 +1,14 @@
 ### `style.css`
   :root{
-      --bg-1: #ffdcb3; /* peach */
-      --bg-2: #cfe8ff; /* light blue */
-      --accent: #6b4eff; /* soft purple-blue */
-      --muted: #6b6b78;
-      --glass: rgba(255,255,255,0.6);
-      --radius: 20px;
-      --max-width: 1100px;
-      color-scheme: light;
+  /* style.css */
+
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f); /* soft peach gradient */
+  color: #333;
+}
+
 line-height:1.45;
 display:flex;
 justify-content:center;
