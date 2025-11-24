@@ -11,7 +11,7 @@
 body {
   margin: 0;
   font-family: 'Georgia', serif;
-  background: linear-gradient(135deg, #ffecd2, #fcb69f); /* soft peach gradient */
+  background: navy
   color: #333;
   line-height: 1.45;
   display: flex;
